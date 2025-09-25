@@ -1,0 +1,1976 @@
+<html>
+  <head>
+    <title>Print Ticket</title>
+    <style>
+      @page {
+        size: auto; /* auto is the initial value */
+        margin: 5mm; /* this affects the margin in the printer settings */
+      }
+      #pigeon-qr-code{
+        width: 200px;
+        display: block;
+      }
+      #pigeon-qr-code img{
+        width: 180px;
+        height: 180px;
+        padding: 15px;
+      }
+      #pigeon-qr-code canvas{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <table
+      _ngcontent-uid-c92=""
+      width="60%"
+      id="printTable"
+      align="center"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      oncontextmenu="return false"
+      unselectable="on"
+      onselectstart="return false;"
+      onmousedown="return false;"
+      style="border: 2px solid rgb(0, 0, 0); font-family: Calibri; width: 100%"
+      class="ng-star-inserted"
+    >
+      <tbody>
+        <tr _ngcontent-uid-c92="">
+          <!---->
+        </tr>
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="">
+            <table _ngcontent-uid-c92="" width="100%" align="center">
+              <tbody>
+                <tr _ngcontent-uid-c92="" valign="top">
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="20%"
+                    align="right"
+                    class="ng-star-inserted"
+                  >
+                    <!----><!---->
+                  </td>
+                  <!---->
+                  <td
+                    _ngcontent-uid-c92=""
+                    id="heading"
+                    width="60%"
+                    align="center"
+                  >
+                    <u _ngcontent-uid-c92=""
+                      ><b _ngcontent-uid-c92=""
+                        ><span
+                          _ngcontent-uid-c92=""
+                          style="
+                            font-family: Calibri;
+                            font-size: 17px;
+                            color: black;
+                          "
+                          class="ng-star-inserted"
+                          >Electronic Reservation Slip (ERS)</span
+                        ><!----><!----><!----><!----></b
+                      ></u
+                    ><span
+                      _ngcontent-uid-c92=""
+                      style="font-family: Calibri; font-size: 13px"
+                      class="ng-star-inserted"
+                      >-Normal User</span
+                    ><!----><!---->
+                  </td>
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="20%"
+                    align="left"
+                    class="ng-star-inserted"
+                  >
+                    <!----><!---->
+                  </td>
+                  <!---->
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="">
+            <table _ngcontent-uid-c92="" width="100%" align="center">
+              <tbody>
+                <tr _ngcontent-uid-c92="">
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="33%"
+                    align="left"
+                    style="padding-left: 10px"
+                  >
+                    <img
+                      _ngcontent-uid-c92=""
+                      applazyload=""
+                      rel="preload"
+                      alt="Indian railway logo"
+                      width="60"
+                      class="ng-star-inserted"
+                      src="https://www.irctc.co.in/nget/assets/images/secondry-logo.png"
+                    /><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="33%" align="center">
+                    <!---->
+                  </td>
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="33%"
+                    align="right"
+                    style="padding-right: 10px"
+                  >
+                    <img
+                      _ngcontent-uid-c92=""
+                      applazyload=""
+                      rel="preload"
+                      alt="IRCTC Logo"
+                      width="60"
+                      src="https://www.irctc.co.in/nget/assets/images/logo.png"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="">
+            <table _ngcontent-uid-c92="" width="100%" align="center">
+              <tbody>
+                <tr _ngcontent-uid-c92="">
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="20%"
+                    align="left"
+                    style="text-align: center"
+                  >
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 15px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92="">Booked From</strong></span
+                    ><!----><!---->
+                  </td>
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="40%"
+                    align="center"
+                    style="text-align: center"
+                  >
+                    <img
+                      _ngcontent-uid-c92=""
+                      applazyload=""
+                      rel="preload"
+                      alt="Arrow Logo"
+                      class="ng-star-inserted"
+                      src="https://www.irctc.co.in/nget/assets/images/arrow_en.jpg"
+                    /><!----><!---->
+                  </td>
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="20%"
+                    align="right"
+                    style="text-align: center"
+                  >
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 15px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92="">To</strong></span
+                    ><!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="30%"
+                    align="left"
+                    style="text-align: center"
+                  >
+                    <!----><span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 16px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      id="pigeon-from-station"
+                      ></span
+                    ><!---->
+                  </td>
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="40%"
+                    align="center"
+                    style="text-align: center"
+                  >
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 16px;
+                        color: black;
+                        font-weight: bold;
+                      "
+                      id="pigeon-boarding-station"
+                      ></span
+                    >
+                  </td>
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="30%"
+                    align="right"
+                    style="text-align: center"
+                  >
+                    <!----><span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 16px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      id="pigeon-to-station"
+                      ></span
+                    ><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="30%"
+                    align="left"
+                    style="text-align: center"
+                  >
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 16px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      id="pigeon-train-start-date"
+                      ></span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="40%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 16px;
+                        color: black;
+                        font-weight: bold;
+                      "
+                      class="ng-star-inserted"
+                      id="pigeon-boarding-date-time"
+                      ></span
+                    ><!----><!----><!----><!---->
+                  </td>
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="30%"
+                    align="right"
+                    style="text-align: center"
+                  >
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 16px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      id="pigeon-arrival-date-time"
+                      ></span
+                    ><!----><!----><!----><!---->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+          <!---->
+        </tr>
+        <!---->
+        <tr _ngcontent-uid-c92="">
+          <td
+            _ngcontent-uid-c92=""
+            style="border-top: 2px solid #000000;border-bottom: 2px solid #000000;">
+            <table _ngcontent-uid-c92="" width="100%" align="center">
+              <tbody>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="22%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 15px;
+                        color: black;
+                        text-align: center;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92="">PNR</strong></span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="56%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 15px;
+                        color: black;
+                        text-align: center;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92=""
+                        >Train No./Name</strong
+                      ></span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="22%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 15px;
+                        color: black;
+                        text-align: center;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92="">Class</strong></span
+                    ><!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="22%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 18px;
+                        color: rgb(46, 116, 181);
+                        text-align: center;
+                      "
+                      ><strong _ngcontent-uid-c92="" id="pigeon-pnr"></strong></span
+                    >
+                  </td>
+                  <td _ngcontent-uid-c92="" width="56%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 18px;
+                        color: rgb(46, 116, 181);
+                        text-align: center;
+                      "
+                      ><strong _ngcontent-uid-c92="" id="pigeon-train-details"></strong
+                      ></span
+                    >
+                  </td>
+                  <td _ngcontent-uid-c92="" width="22%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 18px;
+                        color: rgb(46, 116, 181);
+                        text-align: center;
+                      "
+                      ><strong _ngcontent-uid-c92="" id="pigeon-train-class"></strong
+                      ></span
+                    >
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="22%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 15px;
+                        color: black;
+                        text-align: center;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92="">Quota</strong></span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="56%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 15px;
+                        color: black;
+                        text-align: center;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92="">Distance </strong></span
+                    ><!----><!----><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="22%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 15px;
+                        color: black;
+                        text-align: center;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92="">Booking Date</strong></span
+                    ><!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="22%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 13px;
+                        color: black;
+                        text-align: center;
+                      "
+                      id="pigeon-train-quota"
+                      ></span
+                    >
+                  </td>
+                  <td _ngcontent-uid-c92="" width="56%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 13px;
+                        color: black;
+                        text-align: center;
+                      "
+                      class="ng-star-inserted"
+                      id="pigeon-travel-distance"
+                      ></span
+                    ><!----><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="22%" align="center">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 13px;
+                        color: black;
+                        text-align: center;
+                      "
+                      id="pigeon-booking-date-time"
+                      ></span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="" style="padding: 0px 10px">
+            <span
+              _ngcontent-uid-c92=""
+              style="font-family: Calibri; font-size: 17px; color: black"
+              class="ng-star-inserted"
+              ><strong _ngcontent-uid-c92=""
+                ><u _ngcontent-uid-c92="">Passenger Details</u></strong
+              ></span
+            ><!----><!---->
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="">
+            <table _ngcontent-uid-c92="" width="100%" align="left">
+              <tbody id="pigeon-passengers">
+                <tr
+                  _ngcontent-uid-c92=""
+                  align="center"
+                  style="
+                    padding-top: 20px;
+                    font-family: Calibri;
+                    font-size: 14px;
+                    color: black;
+                    font-weight: bold;
+                  "
+                  class="ng-star-inserted"
+                >
+                  <td _ngcontent-uid-c92="" width="3%">
+                    <b _ngcontent-uid-c92="">#</b>
+                  </td>
+                  <td _ngcontent-uid-c92="" width="19%" align="left">
+                    <b _ngcontent-uid-c92="">Name</b>
+                  </td>
+                  <td _ngcontent-uid-c92="" width="7%" align="left">
+                    <b _ngcontent-uid-c92="">Age</b>
+                  </td>
+                  <td _ngcontent-uid-c92="" width="9%" align="left">
+                    <b _ngcontent-uid-c92="">Gender</b>
+                  </td>
+                  <!---->
+                  <td _ngcontent-uid-c92="" width="25%" align="left">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b _ngcontent-uid-c92=""
+                      >Booking Status</b
+                    >
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%" align="left">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b _ngcontent-uid-c92=""
+                      >Current Status</b
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="" style="height: 2px"></tr>
+        <!----><!---->
+        <tr
+          _ngcontent-uid-c92=""
+          align="left"
+          style="font-family: Calibri; font-size: 14px; color: black"
+          class="ng-star-inserted"
+        >
+          <!---->
+        </tr>
+        <!----><!----><!----><!---->
+        <tr _ngcontent-uid-c92="" height="5"></tr>
+        <tr _ngcontent-uid-c92="">
+          <td
+            _ngcontent-uid-c92=""
+            width="100%"
+            style="padding: 0px 0px 0px 10px; border-top: 2px solid #000000"
+          >
+            <table _ngcontent-uid-c92="" width="100%">
+              <tbody>
+                <tr _ngcontent-uid-c92="">
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="10%"
+                    class="ng-star-inserted"
+                  >
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="font-family: Calibri; font-size: 8px; color: black"
+                      >Acronyms:
+                    </span>
+                  </td>
+                  <!----><!---->
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="30%"
+                    class="ng-star-inserted"
+                  >
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="font-family: Calibri; font-size: 8px; color: black"
+                      >RLWL: REMOTE LOCATION WAITLIST</span
+                    >
+                  </td>
+                  <!----><!---->
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="30%"
+                    class="ng-star-inserted"
+                  >
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="font-family: Calibri; font-size: 8px; color: black"
+                      >PQWL: POOLED QUOTA WAITLIST</span
+                    >
+                  </td>
+                  <!----><!---->
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="30%"
+                    class="ng-star-inserted"
+                  >
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="font-family: Calibri; font-size: 8px; color: black"
+                      >RSWL: ROAD-SIDE WAITLIST</span
+                    >
+                  </td>
+                  <!----><!---->
+                </tr>
+                <tr _ngcontent-uid-c92="" height="4"></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="">
+          <td
+            _ngcontent-uid-c92=""
+            width="100%"
+            style="padding: 0px 0px 0px 10px"
+          >
+            <table _ngcontent-uid-c92="" width="71%" align="left">
+              <tbody>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="100%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 14px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92=""
+                        >Transaction ID: <span id="pigeon-ticket-transaction-id"></span></strong
+                      ></span
+                    ><!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <!---->
+                </tr>
+                <!---->
+                <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                  <td
+                    _ngcontent-uid-c92=""
+                    width="100%"
+                    class="ng-star-inserted"
+                  >
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 14px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                    >
+                      IR recovers only 57% of cost of travel on an
+                      average.</span
+                    ><!----><!---->
+                  </td>
+                  <!---->
+                </tr>
+                <!---->
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="100%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 17px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92=""
+                        ><u _ngcontent-uid-c92="">Payment Details</u></strong
+                      ></span
+                    ><!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="100%" align="left">
+                    <table
+                      _ngcontent-uid-c92=""
+                      width="100%"
+                      class="ng-star-inserted"
+                    >
+                      <tbody id="pigeon-fare-info-list">
+
+                      </tbody>
+                    </table>
+                    <!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="" height="5"></tr>
+                <!---->
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="100%" align="left">
+                    <!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="" height="5"></tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 11px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >PG Charges as applicable (Additional)</span
+                    ><!----><!---->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table _ngcontent-uid-c92="" width="29%" align="right">
+              <tbody>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="100%" align="right">
+                    <qr-code id="pigeon-qr-code" _ngcontent-uid-c92=""></qr-code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="">
+            <ul
+              _ngcontent-uid-c92=""
+              style="
+                list-style-type: disc !important;
+                padding: 0px 25px;
+                margin-bottom: 5px;
+              "
+              class="ng-star-inserted"
+            >
+              <li
+                _ngcontent-uid-c92=""
+                style="
+                  font-family: Calibri;
+                  font-size: 13px;
+                  color: black;
+                  padding-top: 5px;
+                  text-align: justify;
+                "
+              >
+                <strong _ngcontent-uid-c92=""
+                  >Beware of fraudulent customer care number. For any
+                  assistance, use only the IRCTC e-ticketing Customer care
+                  number:14646.</strong
+                >
+              </li>
+            </ul>
+            <!----><!---->
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="" style="border-bottom: 1px solid black">
+            <ul
+              _ngcontent-uid-c92=""
+              style="list-style-type: none; margin: 0px; padding: 0px 10px"
+              class="ng-star-inserted"
+            >
+              <li
+                _ngcontent-uid-c92=""
+                style="
+                  font-family: Calibri;
+                  font-size: 12px;
+                  color: black;
+                  text-align: justify;
+                  padding-left: 1px;
+                "
+                class="ng-star-inserted"
+              >
+                <strong _ngcontent-uid-c92=""
+                  >IRCTC Convenience Fee is charged per e-ticket irrespective of
+                  number of passengers on the ticket.</strong
+                >
+              </li>
+              <!----><!---->
+              <li
+                _ngcontent-uid-c92=""
+                style="
+                  font-family: Calibri;
+                  font-size: 13px;
+                  color: black;
+                  padding: 3px 0px;
+                "
+              >
+                <strong _ngcontent-uid-c92=""
+                  >* The printed Departure and Arrival Times are liable to
+                  change. Please Check correct departure, arrival from Railway
+                  Station Enquiry or Dial 139 or SMS RAIL to 139.</strong
+                >
+              </li>
+              <!---->
+            </ul>
+            <!----><!---->
+          </td>
+        </tr>
+        <!----><!----><!----><!----><!----><!----><!---->
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="">
+            <ul
+              _ngcontent-uid-c92=""
+              style="
+                list-style-type: disc !important;
+                padding: 0px 25px;
+                margin-bottom: 5px;
+              "
+              class="ng-star-inserted"
+            >
+              <li
+                _ngcontent-uid-c92=""
+                style="
+                  font-family: Calibri;
+                  font-size: 13px;
+                  color: black;
+                  padding-top: 5px;
+                  text-align: justify;
+                "
+                class="ng-star-inserted"
+              >
+                This ticket is booked on a personal User ID, its sale/purchase
+                is an offence u/s 143 of the Railways Act,1989.
+              </li>
+              <!---->
+              <li
+                _ngcontent-uid-c92=""
+                style="
+                  font-family: Calibri;
+                  font-size: 13px;
+                  color: black;
+                  padding: 0px;
+                  text-align: justify;
+                "
+              >
+                Prescribed original ID proof is required while travelling along
+                with SMS/ VRM/ ERS otherwise will be treated as without ticket
+                and penalized as per Railway Rules.
+              </li>
+            </ul>
+            <!----><!---->
+          </td>
+        </tr>
+        <!---->
+        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+          <td _ngcontent-uid-c92="" width="100%" style="padding-left: 10px">
+            <span
+              _ngcontent-uid-c92=""
+              style="font-family: Calibri; font-size: 12px; color: black"
+              class="ng-star-inserted"
+              ><strong _ngcontent-uid-c92=""
+                >Indian Railways GST Details:</strong
+              ></span
+            ><!----><!---->
+          </td>
+        </tr>
+        <!---->
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="" style="padding: 0px 10px">
+            <table
+              _ngcontent-uid-c92=""
+              align="left"
+              width="80%"
+              class="ng-star-inserted"
+            >
+              <tbody>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >Invoice Number: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      id="pigeon-ticket-invoice-no"
+                      ></span
+                    >
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >Address: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      id="pigeon-ticket-supplier-address"
+                      ></span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!---->
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="" style="padding: 0px 10px">
+            <table
+              _ngcontent-uid-c92=""
+              align="left"
+              width="80%"
+              class="ng-star-inserted"
+            >
+              <tbody>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92=""
+                        >Supplier Information:</strong
+                      ></span
+                    ><!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >SAC Code: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      id="pigeon-sac-code"
+                      ></span
+                    >
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >GSTIN: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      id="pigeon-gstin"
+                      ></span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!---->
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="" style="padding: 0px 10px">
+            <table
+              _ngcontent-uid-c92=""
+              align="left"
+              width="80%"
+              border="0"
+              class="ng-star-inserted"
+            >
+              <tbody>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92=""
+                        >Recipient Information:</strong
+                      ></span
+                    ><!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >GSTIN: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <!----><span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >NA</span
+                    ><!---->
+                  </td>
+                  <td _ngcontent-uid-c92=""></td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >Name: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <!----><span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: #000000;
+                      "
+                      class="ng-star-inserted"
+                      >NA</span
+                    ><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >Address: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                    >NA</span>
+                    <!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >Taxable Value: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: #000000;
+                      "
+                      class="ng-star-inserted"
+                      id="pigeon-taxable-amount"
+                      ></span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92=""></td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >CGST Rate: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      ><span id="pigeon-cgst-rate"></span>%</span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >CGST Amount: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      id="pigeon-cgst-amount"
+                      ></span
+                    ><!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >SGST/UGST Rate: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >NA</span>
+                  </td>
+                  <!----><!----><!---->
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >SGST/UGST Amount: </span>
+                      <!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >0.0</span>
+                  </td>
+                  <!----><!----><!---->
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >IGST Rate: </span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      ><span id="pigeon-igst-rate"></span>%</span>
+                      <!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      >IGST Amount: </span>
+                      <!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      id="pigeon-igst-amount"
+                      ></span
+                    ><!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92="">Total Tax:</strong></span
+                    ><!----><!---->
+                  </td>
+                  <td _ngcontent-uid-c92="" width="25%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 12px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      id="pigeon-total-tax"
+                      ></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!---->
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="" style="border-bottom: 2px solid #000000">
+          <td
+            _ngcontent-uid-c92=""
+            width="100%"
+            style="
+              padding: 0px 12px;
+              font-family: Calibri;
+              font-size: 12px;
+              color: black;
+              border-bottom: 2px solid #000000;
+            "
+          >
+            <span _ngcontent-uid-c92="" class="ng-star-inserted"
+              ><strong _ngcontent-uid-c92="">Place of Supply:</strong></span
+            ><!----><!---->&nbsp;&nbsp;
+            <!----><span _ngcontent-uid-c92="" class="ng-star-inserted">NA</span
+            ><!---->&nbsp;&nbsp;&nbsp;
+            <span _ngcontent-uid-c92="" class="ng-star-inserted"
+              ><strong _ngcontent-uid-c92=""
+                >State Name/Code of Supplier:</strong
+              ></span
+            ><!----><!---->&nbsp;&nbsp;
+            <span _ngcontent-uid-c92="" id="pigeon-supplier-state-code">Delhi/DL</span>
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="" height="10px"></tr>
+        <tr _ngcontent-uid-c92="">
+          <td _ngcontent-uid-c92="" style="padding: 0px 10px">
+            <table _ngcontent-uid-c92="" width="100%">
+              <tbody>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="100%">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 11px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                      ><strong _ngcontent-uid-c92=""
+                        ><u _ngcontent-uid-c92="">INSTRUCTIONS:</u></strong
+                      ></span
+                    ><!----><!---->
+                  </td>
+                </tr>
+                <tr _ngcontent-uid-c92="">
+                  <td _ngcontent-uid-c92="" width="100%">
+                    <table
+                      _ngcontent-uid-c92=""
+                      border="0"
+                      width="100%"
+                      align="center"
+                      style="
+                        font-family: Calibri;
+                        font-size: 11px;
+                        color: black;
+                      "
+                      class="ng-star-inserted"
+                    >
+                      <tbody>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >1.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >Prescribed Original ID proofs are:- Voter
+                              Identity Card / Passport / PAN Card / Driving
+                              License / Photo ID card issued by Central / State
+                              Govt. / Public Sector Undertakings of State /
+                              Central Government ,District Administrations ,
+                              Municipal bodies and Panchayat Administrations
+                              which are having serial number / Student Identity
+                              Card with photograph issued by recognized School
+                              or College for their students / Nationalized Bank
+                              Passbook with photograph /Credit Cards issued by
+                              Banks with laminated photograph/Unique
+                              Identification Card "Aadhaar", m-Aadhaar,
+                              e-Aadhaar. /Passenger showing the Aadhaar/Driving
+                              Licence from the "Issued Document" section by
+                              logging into his/her DigiLocker account considered
+                              as valid proof of identity. (Documents uploaded by
+                              the user i.e. the document in "Uploaded Document"
+                              section will not be considered as a valid proof of
+                              identity).</span
+                            >
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >2.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >PNRs having fully waitlisted status will be
+                              dropped and automatic refund of the ticket amount
+                              after deducting the applicable CLERKAGE by Railway
+                              shall be credited to the account used for payment
+                              for booking of the ticket. Passengers having fully
+                              waitlisted e-ticket are not allowed to board the
+                              train. However, the names of PARTIALLY
+                              waitlisted/confirmed and RAC ticket passenger will
+                              appear in the chart.</span
+                            >
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >3.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >Passengers travelling on a fully waitlisted
+                              e-ticket will be treated as Ticketless.
+                            </span>
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >4.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >Obtain certificate from the TTE /Conductor in
+                              case of (a) PARTIALLY waitlisted e-ticket when
+                              LESS NO. OF PASSENGERS travel, (b)A.C FAILURE,
+                              (c)TRAVEL IN LOWER CLASS. This original
+                              certificate must be sent to GGM (IT), IRCTC,
+                              Internet Ticketing Centre, IRCA Building, State
+                              Entry Road, New Delhi-110055 after filing TDR
+                              online within prescribed time for claiming refund.
+                            </span>
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >5.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >In case, on a party e-ticket or a family e-ticket
+                              issued for travel of more than one passenger, some
+                              passengers have confirmed reservation and others
+                              are on RAC or waiting list, full refund of fare,
+                              less clerkage, shall be admissible for confirmed
+                              passengers also subject to the condition that the
+                              ticket shall be cancelled online or online TDR
+                              shall be filed for all the passengers upto thirty
+                              minutes before the scheduled departure of the
+                              train.
+                            </span>
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >6.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >In case train is late more than 3 hours, refund
+                              is admissible as per railway refund rules only
+                              when TDR is filed by the user before the actual
+                              departure of the train at boarding station and
+                              passenger has not travelled.</span
+                            >
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >7.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >In case of train cancellation on its entire run,
+                              full refund is granted automatically by the
+                              system. However, if the train is cancelled
+                              partially on its run or diverted and not touching
+                              boarding/destination station, passengers are
+                              required to file online TDR within 72 hours of
+                              scheduled departure of the train from passengers
+                              boarding station.
+                            </span>
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >8.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >Never purchase e-ticket from unauthorized agents
+                              or persons using their personal IDs for commercial
+                              purposes. Such tickets are liable to be cancelled
+                              and forfeited without any refund of money, under
+                              section (143) of the Indian Railway Act 1989. List
+                              of authorized agents are available on
+                              www.irctc.co.in under 'Find NGet Agents'
+                              option.</span
+                            >
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >9.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >For detail, Rules, Refund rules, Terms &amp;
+                              Conditions of E-Ticketing services, Travel
+                              Insurance facility etc. Please visit
+                              www.irctc.co.in
+                            </span>
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >10.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >While booking this ticket, you have agreed of
+                              having read the Health Protocol of Destination
+                              State of your travel. You are again advised to
+                              clearly read the Health Protocol advisory of
+                              destination state before start of your travel and
+                              follow them properly.
+                            </span>
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >11.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >The FIR forms are available with on board ticket
+                              checking staff, train guard and train escorting
+                              RPF/GRP staff.
+                            </span>
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >12.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >Variety of meals available in more than 1500
+                              trains. For delivery of meal of your choice on
+                              your seat log on to www.ecatering.irctc.co.in or
+                              call 1323 Toll Free. For any
+                              suggestions/complaints related to Catering
+                              services, contact Toll Free No. 1800-111-321
+                              (07.00 hrs to 22.00 hrs)
+                            </span>
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >13.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >National Consumer Helpline (NCH) Toll Free
+                              Number: 1800-11-400 or 14404</span
+                            >
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >14.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >You can book unreserved ticket from UTS APP or
+                              ATVMs (Automatic Ticket Vending Machines) located
+                              in Railway Stations.</span
+                            >
+                          </td>
+                        </tr>
+                        <tr _ngcontent-uid-c92="" class="ng-star-inserted">
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="text-align: justify; padding: 0px"
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >15.</span
+                            >
+                          </td>
+                          <td
+                            _ngcontent-uid-c92=""
+                            valign="top"
+                            style="
+                              text-align: justify;
+                              padding: 0px 0px 0px 5px;
+                            "
+                          >
+                            <span
+                              _ngcontent-uid-c92=""
+                              style="font-family: Calibri; font-size: 11px"
+                              >As per RBI guidelines, the refund of Ticket
+                              should be given in the same Bank account, which
+                              was used for booking. It is necessary that the
+                              Bank Account used for booking online ticket should
+                              not be closed at least up to 30 days beyond the
+                              date of the journey. If accounts are found closed
+                              at the time of processing refund, the refund will
+                              be regretted by the Bank.</span
+                            >
+                          </td>
+                        </tr>
+                        <!---->
+                      </tbody>
+                    </table>
+                    <!----><!---->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr _ngcontent-uid-c92="" height="10px"></tr>
+        <tr _ngcontent-uid-c92="">
+          <td
+            _ngcontent-uid-c92=""
+            colspan="12"
+            align="center"
+            style="
+              border-top: 2px solid #000000;
+            "
+            class="ng-star-inserted"
+          >
+            <table _ngcontent-uid-c92="" width="100%">
+              <tbody>
+                <tr>
+                  <td _ngcontent-uid-c92="" style="padding: 0px 10px">
+                    <span
+                      _ngcontent-uid-c92=""
+                      style="
+                        font-family: Calibri;
+                        font-size: 13px;
+                        color: black;
+                      "
+                      ><strong _ngcontent-uid-c92=""
+                        ><u _ngcontent-uid-c92="">Customer Care:</u></strong
+                      ></span
+                    >
+                    <ul
+                      _ngcontent-uid-c92=""
+                      style="
+                        list-style-type: disc !important;
+                        padding: 0px 25px;
+                        margin-bottom: 5px;
+                      "
+                    >
+                      <li
+                        _ngcontent-uid-c92=""
+                        style="
+                          font-family: Calibri;
+                          font-size: 12px;
+                          color: black;
+                          padding-top: 5px;
+                          text-align: justify;
+                        "
+                      >
+                        For e-ticket booking, cancellation and refund
+                        assistance, please contact us at 14646 or mail us at
+                        care@irctc.co.in.
+                      </li>
+                      <li
+                        _ngcontent-uid-c92=""
+                        style="
+                          font-family: Calibri;
+                          font-size: 12px;
+                          color: black;
+                          padding-top: 5px;
+                          text-align: justify;
+                        "
+                      >
+                        For Railway Enquiry, please contact us at 139 or SMS
+                        RAIL to 139.
+                      </li>
+                      <li
+                        _ngcontent-uid-c92=""
+                        style="
+                          font-family: Calibri;
+                          font-size: 12px;
+                          color: black;
+                          padding-top: 5px;
+                          text-align: justify;
+                        "
+                      >
+                        For e-catering, to book and get food delivered on your
+                        train berth, please contact us at 1323 (24*7 Hrs Toll
+                        Free) or log on to www.ecatering.irctc.co.in.
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="../js/qrcode.min.js"></script>
+    <script src="../js/print-ticket.js"></script>
+  </body>
+</html>

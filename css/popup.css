@@ -1,0 +1,16 @@
+.pigeon-cnt{
+    padding: 20px;
+    background-color: #c9eaff;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.logo p{
+    margin-top: 2px;
+    font-size: 18px;
+}
+.logo img{
+    width: 50px;
+}

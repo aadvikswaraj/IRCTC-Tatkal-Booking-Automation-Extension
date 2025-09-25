@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Pigeon IRCTC Automation Software",
+  "version": "8.0.0",
+  "description": "This Software is can automate the process of Ticket Booking on IRCTC Website.",
+  "icons": {
+    "16":"images/logo/16x16.png",
+    "24":"images/logo/24x24.png",
+    "32":"images/logo/32x32.png",
+    "64":"images/logo/64x64.png",
+    "128":"images/logo/128x128.png",
+    "256":"images/logo/256x256.png",
+    "512":"images/logo/512x512.png"
+  },
+  "background": {
+    "service_worker": "js/background.js",
+    "type": "module"
+  },
+  "permissions": [ 
+    "proxy",
+    "identity",
+    "scripting",
+    "tabs",
+    "activeTab",
+    "storage",
+    "nativeMessaging",
+    "webRequest",
+    "webRequestAuthProvider",
+    "declarativeNetRequest"],
+  "host_permissions": [
+    "https://www.irctc.co.in/*",
+    "https://www.wps.irctc.co.in/*",
+    "https://mercury-t2.phonepe.com/*",
+    "https://securegw.paytm.in/*",
+    "https://checkout.razorpay.com/*",
+    "https://www.irctcipay.com/*",
+    "https://walletapi.mobikwik.com/*",
+    "https://*.amazonaws.com/*",
+    "https://www.indianrail.gov.in/",
+    "http://www.thunderclient.com/*",
+    "https://www.google.com/*"
+  ],
+  "action": {
+    "default_popup": "pages/popup.html",
+    "default_icon": "images/logo/128x128.png",
+    "default_title": "Pigeon Tatkal Software"
+  }
+}

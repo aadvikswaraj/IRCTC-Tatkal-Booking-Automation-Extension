@@ -1,0 +1,133 @@
+body{
+    overflow: hidden;
+    letter-spacing: 0.4px;
+    line-height: 1.42857143;
+}
+@keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+.pigeon-loader{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% - 128.5px);
+    background-color: #c9eaff;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pigeon-loader img{
+    animation: rotating 1s linear infinite;
+}
+.pigeon-loader p{
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.pigeon-popup-cnt{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+}
+.pigeon-popup{
+    position: relative;
+    width: 550px;
+    background-color: #c9eaff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px 1px #404040;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.pigeon-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 8px 10px;
+    border-bottom: 1px solid black;
+}
+.pigeon-navbar>.right{
+    display: flex;
+    align-items: center;
+}
+.important-msg{
+    background-color: #bd0000;
+    color: white;
+    padding: 5px 5px;
+    margin: 0;
+}
+.status-msg{
+    background-color: black;
+    color: yellow;
+    padding: 8px 5px;
+    margin: 0;
+}
+@keyframes pigeon-status-msg-bg-animation {
+    0% {
+        background-color: black;
+        color: yellow;
+    }
+    100% {
+        background-color: #209702;
+        color: yellow;
+    }
+  }
+
+.status-msg.focus{
+    animation-name: pigeon-status-msg-bg-animation;
+    animation-duration: 400ms;
+    animation-iteration-count: infinite;
+}
+.pigeon-body{
+    height: 300px;
+}
+.pigeon-qr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.pigeon-qr img{
+    width: 200px;
+    height: 200px;
+}
+.pigeon-qr p{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.pigeon-upi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.pigeon-upi svg{
+    background-color: #fff;
+    border-radius: 100%;
+}
+.pigeon-upi p{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: center;
+}

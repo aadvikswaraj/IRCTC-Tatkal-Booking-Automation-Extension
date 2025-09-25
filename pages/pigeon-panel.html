@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pigeon Panel</title>
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/pigeon-panel.css" />
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <div class="logo">
+          <img width="40" src="data:image/png;base64,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" alt="Logo"/>
+          <span class="title">Pigeon Software</span>
+        </div>
+        <ul class="navlinks">
+          <li><a href="#" data-dropdown="false" class="link active" data-page="tickets">TICKETS</a></li>
+          <li class="dropdown-menu-outer" data-dropdown="true" style="position: relative;"><a href="#" class="link" data-page="data">DATA <div class="triangle_down"></div></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" data-dropdown-link="true" class="dropdown-link" data-page="irctc-ids">IRCTC ID'S</a></li>
+            <li><a href="#" data-dropdown-link="true" class="dropdown-link" data-page="payment-options">PAYMENT OPTION'S</a></li>
+            <li><a href="#" data-dropdown-link="true" class="dropdown-link" data-page="backup">BACKUP</a></li>
+          </ul>
+          </li>
+          <li><a href="#" data-dropdown="false" class="link" data-page="settings">SETTINGS</a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <!-- <div class="pigeon-id">Pigeon ID : <b>Access to All</b></div> -->
+        <span class="time">Loading...</span>
+      </div>
+    </header>
+    <main>
+      <div class="pigeon-loader">
+        <img width="70" src="data:image/png;base64,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" alt="Pigeon Logo">
+        <p>Pigeon is Loading...</p>
+      </div>
+      <div class="tab-exists d-none">
+        <img width="70" src="data:image/png;base64,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" alt="Pigeon Logo">
+        <p>Duplicate Pigeon Panel Tab Exists</p>
+      </div>
+      <div class="ticket-popup-cnt d-none">
+        <div class="ticket-popup" style="margin-top: 90px; margin-bottom: 20px;">
+          <div class="ticket-popup-header">
+            <p>Ticket</p>
+            <span id="close-ticket-popup-btn" class="close-btn">x</span>
+          </div>
+          <form class="ticket-popup-body">
+            <div class="journey-data">
+              <h2 class="header">Journey Details</h2>
+              <div class="form">
+                <div class="input-cnt">
+                  <label for="journey-from">From :</label>
+                  <div class="autocomplete" style="width: calc(100% - 40.56px);">
+                    <input type="text" data-text="upper" id="journey-from" autocomplete="off" style="width: 100% !important;" required />
+                  </div>
+                </div>
+                <div class="input-cnt">
+                  <label for="journey-to">To :</label>
+                  <div class="autocomplete" style="width: calc(100% - 23.93px);">
+                    <input type="text" data-text="upper" id="journey-to" autocomplete="off" style="width: 100% !important;" required />
+                  </div>
+                </div>
+                <div class="input-cnt" style="padding-right: 0;">
+                  <label for="journey-date">Date : </label>
+                  <input type="date" id="journey-date" autocomplete="off" style="width: calc(100% - 37.69px);" required />
+                </div>
+                <div class="input-cnt">
+                  <label for="journey-train">Train No :</label>
+                  <input type="number" id="journey-train" autocomplete="off" style="width: calc(100% - 59.6px);" required />
+                </div>
+                <div class="input-cnt">
+                  <label for="journey-class">Class :</label>
+                  <select id="journey-class" autocomplete="off" style="width: calc(100% - 42.74px);" required>
+                    <option value="SL">SLEEPER (SL)</option>
+                    <option value="2S">SECOND SITTING (2S)</option>
+                    <option value="1A">AC FIRST CLASS (1A)</option>
+                    <option value="EV">Vistadome AC (EV)</option>
+                    <option value="EC">Exec. Chair Car (EC)</option>
+                    <option value="2A">AC 2 Tier (2A)</option>
+                    <option value="3A">AC 3 Tier (3A)</option>
+                    <option value="3E">AC 3 Economy (3E)</option>
+                    <option value="CC">AC Chair car (CC)</option>
+                  </select>
+                </div>
+                <div class="input-cnt" style="padding-right: 0;">
+                  <label for="journey-quota">Quota :</label>
+                  <select id="journey-quota" autocomplete="off" style="width: calc(100% - 45.64px);" required>
+                    <option value="GN">GENERAL</option>
+                    <option value="TQ">TATKAL</option>
+                    <option value="PT">PREMIUM TATKAL</option>
+                  </select>
+                </div>
+                <div class="input-cnt" style="padding-right: 0; width: 50%;">
+                  <label for="journey-train-starting-date" style="width: 150px !important;">Train Starting Date :</label>
+                  <select id="journey-train-starting-date" autocomplete="off" style="width: calc(100% - 150px);" required>
+                    <option value="0">Same as Boarding date</option>
+                    <option value="1">1 Day Before Boarding date</option>
+                    <option value="2">2 Days Before Boarding date</option>
+                    <option value="3">3 Days Before Boarding date</option>
+                    <option value="4">4 Days Before Boarding date</option>
+                    <option value="5">5 Days Before Boarding date</option>
+                  </select>
+                </div>
+                <button type="button" class="train-search-trigger-btn success-btn">Search Trains</button>
+              </div>
+            </div>
+            <div class="passengers-data">
+              <h2 class="header">Passengers Details</h2>
+              <div class="passengers">
+                  <div class="labels">
+                      <span data-label="sno">No</span>
+                      <span data-label="name">Name</span>
+                      <span data-label="age">Age</span>
+                      <span data-label="sex">Sex</span>
+                      <span data-label="berth">Berth</span>
+                      <span data-label="nationality">Nationality</span>
+                      <span data-label="passport">Passport</span>
+                  </div>
+                  <div class="passenger-data">
+                      <span class="sno">1</span>
+                      <input data-input="name" type="text" data-text="upper">
+                      <input data-input="age" type="number">
+                      <select data-input="sex">
+                        <option value="M" selected>Male</option>
+                        <option value="F">Female</option>
+                        <option value="T">Transgender</option>
+                      </select>
+                      <select data-input="berth">
+                        <option value="">No Preference</option>
+                        <option value="LB">LOWER</option>
+                        <option value="MB">MIDDLE</option>
+                        <option value="UB">UPPER</option>
+                        <option value="SL">SIDE LOWER</option>
+                        <option value="SU">SIDE UPPER</option>
+                      </select>
+                      <select data-input="nationality">
+                        <option value="india" selected>India</option>
+                      </select>
+                      <input data-input="passport" type="text" disabled>
+                  </div>
+                  <div class="passenger-data">
+                      <span class="sno">2</span>
+                      <input data-input="name" type="text" data-text="upper">
+                      <input data-input="age" type="number">
+                      <select data-input="sex">
+                        <option value="M" selected>Male</option>
+                        <option value="F">Female</option>
+                        <option value="T">Transgender</option>
+                      </select>
+                      <select data-input="berth">
+                        <option value="">No Preference</option>
+                        <option value="LB">LOWER</option>
+                        <option value="MB">MIDDLE</option>
+                        <option value="UB">UPPER</option>
+                        <option value="SL">SIDE LOWER</option>
+                        <option value="SU">SIDE UPPER</option>
+                      </select>
+                      <select data-input="nationality">
+                        <option value="india" selected>India</option>
+                      </select>
+                      <input data-input="passport" type="text" disabled>
+                  </div>
+                  <div class="passenger-data">
+                      <span class="sno">3</span>
+                      <input data-input="name" type="text" data-text="upper">
+                      <input data-input="age" type="number">
+                      <select data-input="sex">
+                        <option value="M" selected>Male</option>
+                        <option value="F">Female</option>
+                        <option value="T">Transgender</option>
+                      </select>
+                      <select data-input="berth">
+                        <option value="">No Preference</option>
+                        <option value="LB">LOWER</option>
+                        <option value="MB">MIDDLE</option>
+                        <option value="UB">UPPER</option>
+                        <option value="SL">SIDE LOWER</option>
+                        <option value="SU">SIDE UPPER</option>
+                      </select>
+                      <select data-input="nationality">
+                        <option value="india" selected>India</option>
+                      </select>
+                      <input data-input="passport" type="text" disabled>
+                  </div>
+                  <div class="passenger-data">
+                      <span class="sno">4</span>
+                      <input data-input="name" type="text" data-text="upper">
+                      <input data-input="age" type="number">
+                      <select data-input="sex">
+                        <option value="M" selected>Male</option>
+                        <option value="F">Female</option>
+                        <option value="T">Transgender</option>
+                      </select>
+                      <select data-input="berth">
+                        <option value="">No Preference</option>
+                        <option value="LB">LOWER</option>
+                        <option value="MB">MIDDLE</option>
+                        <option value="UB">UPPER</option>
+                        <option value="SL">SIDE LOWER</option>
+                        <option value="SU">SIDE UPPER</option>
+                      </select>
+                      <select data-input="nationality">
+                        <option value="india" selected>India</option>
+                      </select>
+                      <input data-input="passport" type="text" disabled>
+                  </div>
+                </div>
+            </div>
+            <div class="contact-and-payment-data">
+              <h2 class="header">Contact & Payment Details</h2>
+              <div class="form">
+                <div class="input-cnt" style="padding-right: 5px !important;">
+                  <label for="contact-mobile" style="width: 70px !important;">Mobile No :</label>
+                  <input type="text" id="contact-mobile" style="width: calc(100% - 73px) !important;" autocomplete="off" required />
+                </div>
+                <div class="input-cnt">
+                  <label for="payment-option">Payment Option :</label>
+                  <select id="payment-option" required>
+                    <option value="PAYTM QR">PAYTM QR</option>
+                    <option value="PHONEPE QR">PHONEPE QR</option>
+                  </select>
+                </div>
+                <div class="input-cnt d-none" style="padding-right: 5px !important;">
+                  <label for="payment-fare-limit" style="width: 70px !important;">Fare Limit :</label>
+                  <input type="number" step="any" id="payment-fare-limit" style="width: calc(100% - 70px) !important;" autocomplete="off"/>
+                </div>
+              </div>
+              <!-- <p class="data-info-msg">Fare Limit Includes (Fare + Irctc Convenience Fee +  GST on Irctc Convenience Fee + Bank Transaction Fee + GST on Back Transaction Fee).</p> -->
+            </div>
+            <div class="preferences-data">
+              <h2 class="header">Preferences Details</h2>
+              <div class="form">
+                <div class="input-cnt">
+                  <input type="checkbox" id="preference-auto-upgrade">
+                  <label for="preference-auto-upgrade">Consider for Auto Upgradation</label>
+                </div>
+                <div class="input-cnt">
+                  <input type="checkbox" id="preference-confirm-berth">
+                  <label for="preference-confirm-berth">Book only if confirm berths are allotted.</label>
+                </div>
+                <div class="input-cnt">
+                  <input type="checkbox" id="preference-insurance">
+                  <label for="preference-insurance">Yes, I want Travel Insurance.</label>
+                </div>
+                <div class="input-cnt">
+                  <label for="ticket-name">Ticket Name :</label>
+                  <input type="input" id="ticket-name" autocomplete="off" required>
+                </div>
+              </div>
+            </div>
+            <div class="action-cnt">
+              <button id="save-ticket-btn" class="primary-btn" type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="train-search-popup-cnt d-none">
+        <div class="train-search-popup">
+          <div class="train-search-popup-header">
+            <p>Train Search</p>
+            <span id="close-train-search-popup-btn" class="close-btn">x</span>
+          </div>
+          <form class="train-search-action-cnt">
+            <div class="input-cnt">
+              <label for="train-search--from">From :</label>
+              <div class="autocomplete" style="width: calc(100% - 40.56px);">
+                <input type="text" data-text="upper" id="train-search-from" autocomplete="off" style="width: 100% !important;" required />
+              </div>
+            </div>
+            <div class="input-cnt">
+              <label for="train-search-to" style="width: 50px;">To :</label>
+              <div class="autocomplete" style="width: calc(100% - 23.93px);">
+                <input type="text" data-text="upper" id="train-search-to" autocomplete="off" style="width: 100% !important;" required />
+              </div>
+            </div>
+            <div class="input-cnt" style="padding-right: 0;">
+              <label for="train-search--date">Date : </label>
+              <input type="date" id="train-search-date" autocomplete="off" style="width: calc(100% - 37.69px);" required />
+            </div>
+            <div class="input-cnt">
+              <label for="train-search-quota" style="width: 55px;">Quota :</label>
+              <select id="train-search-quota" autocomplete="off" style="width: calc(100% - 50.64px);" required="">
+                <option value="GN">GENERAL</option>
+                <option value="TQ">TATKAL</option>
+                <option value="PT">PREMIUM TATKAL</option>
+              </select>            </div>
+            <button type="submit" class="primary-btn">Search</button>
+            <div class="train-search-availibility-cnt">
+              <svg class="d-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#FF156D" stroke="#FF156D" stroke-width="15" r="15" cx="40" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#FF156D" stroke="#FF156D" stroke-width="15" r="15" cx="100" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#FF156D" stroke="#FF156D" stroke-width="15" r="15" cx="160" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>
+              <button type="button" id="train-search-availibility-btn" class="success-btn d-none">NOT AVAILABLE</button>
+              <span class="train-search-fare-cnt d-none">Fare : ₹<span class="train-search-fare"></span></span>
+            </div>
+          </form>
+          <div class="train-search-data-cnt">
+            <table class="train-search-data">
+              <thead>
+                <tr>
+                  <td>Train No</td>
+                  <td>Train Name</td>
+                  <td>From</td>
+                  <td>To</td>
+                  <td>Depart</td>
+                  <td>Arrival</td>
+                  <td>Time(Hrs)</td>
+                  <td>Distance(KM)</td>
+                  <td>SL</td>
+                  <td>2S</td>
+                  <td>CC</td>
+                  <td>1A</td>
+                  <td>2A</td>
+                  <td>3A</td>
+                  <td>3E</td>
+                  <td>EC</td>
+                  <td>EV</td>
+                  <td>EA</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="17" style="text-align: center;">No Trains Found</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="irctc-id-history-popup-cnt d-none">
+        <div class="irctc-id-history-popup">
+          <div class="irctc-id-history-popup-header">
+            <p>IRCTC ID History (Username :- aadvik96)</p>
+            <span id="close-train-search-popup-btn" class="close-btn">x</span>
+          </div>
+          <div class="irctc-id-history-data-cnt">
+            <table class="irctc-id-history-data">
+              <thead>
+                <tr>
+                  <td>Train No</td>
+                  <td>PNR</td>
+                  <td>From</td>
+                  <td>To</td>
+                  <td>Booking Quota</td>
+                  <td>Booking Class</td>
+                  <td>Booking Date</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="17" style="text-align: center;">No Trains Found</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="payment-option-popup-cnt d-none">
+        <div class="payment-option-popup" style="margin-top: 90px; margin-bottom: 20px;">
+          <div class="payment-option-popup-header">
+            <p>Payment Option</p>
+            <span id="close-payment-option-popup-btn" class="close-btn">x</span>
+          </div>
+          <form class="payment-option-popup-body">
+            <div class="payment-config-data">
+              <h2 class="header">Config Details</h2>
+              <div class="form">
+                <div class="input-cnt">
+                  <label for="payment-option-config-name" style="width: 50px !important;">Name :</label>
+                  <input type="text" id="payment-option-config-name" autocomplete="off" style="width: calc(100% - 53px);" required />
+                </div>
+                <div class="input-cnt" style="padding-right: 0 !important;">
+                  <label for="payment-option-config-method" style="width: 130px !important;">Payment Method :</label>
+                  <select id="payment-option-config-method" autocomplete="off" style="width: calc(100% - 133px);" required>
+                    <option value="IPAY UPI" selected>IPAY UPI</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="payment-details-data">
+              <h2 class="header">Payment Details</h2>
+              <div class="form">
+                <div id="upi-id-cnt" class="input-cnt">
+                  <label for="payment-upi-id" style="width: 50px !important;">UPI ID :</label>
+                  <input type="text" id="payment-upi-id" style="width: calc(100% - 53px) !important;" autocomplete="off" required />
+                </div>
+              </div>
+              <p class="payment-details-data-msg">
+                PAYTM QR & PHONEPE QR : No Transaction Fee Charged.<br>
+                Any UPI ID : No Transaction Fee Charged.
+              </p>
+            </div>
+            <div class="action-cnt">
+              <button id="save-ticket-btn" class="primary-btn" type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <section data-page="tickets">
+        <p class="section-important-msg">Open Only 3/4 Pairs for Each IP/Proxy. Click on Connect @55Am and Login your Pairs.</p>
+        <div class="action-bar">
+          <button type="button" id="add-ticket-btn" class="primary-btn" style="width: 150px; border-radius: 50px">+ Add Ticket</button>
+        </div>
+        <table style="width: 1000px; margin-bottom: 20px;">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Stations</th>
+              <th>Class</th>
+              <th>Quota</th>
+              <th>Train no.</th>
+              <th>Journey Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="7" style="text-align: center;">No Tickets</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section data-page="settings" style="display: none;">
+        <p class="section-important-msg">Welcome to Pigeon Ticketing Software Settings.</p>
+        <div class="main-settings">
+          <div class="extra-settings-options" style="display: flex; justify-content: flex-end; width: 100%;">
+            <button id="proxy-settings-btn" class="success-btn" style="width: 120px;" type="button">Proxy Settings</button>
+          </div>
+          <form class="main-settings-form">
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="autofill-login-captcha" />
+              <label for="autofill-login-captcha">Autofill Login Captcha.</label>
+            </div>
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="submit-autofill-login-captcha" />
+              <label for="submit-autofill-login-captcha">Auto Submit Autofill Login Captcha.</label>
+            </div>
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="autofill-booking-captcha" />
+              <label for="autofill-booking-captcha">Autofill Booking Captcha.</label>
+            </div>
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="submit-autofill-booking-captcha" />
+              <label for="submit-autofill-booking-captcha">Auto Submit Autofill Booking Captcha.</label>
+            </div>
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="spd-onepair"/>
+              <label for="spd-onepair">Submit Passengers Data on One Pair Only.</label>
+            </div>
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="bna-autologin" />
+              <label for="bna-autologin">Auto Login on Booking not Allowed.</label>
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 15px;">
+              <button type="submit" id="save-settings-btn" class="primary-btn">Save</button>
+            </div>
+          </form>
+        </div>
+        <div class="proxy-settings d-none">
+          <div style="display: flex; justify-content: flex-end; width: 100%;">
+            <button id="back-to-main-settings-proxy-settings-btn" class="secondary-btn" type="button">Back</button>
+          </div>
+          <form class="proxy-settings-form">
+            <p class="info-msg">Proxy Setting is Used to Redirect a Booking to a another Proxy Server for Faster Booking. To Enable/Disable Proxy Settings on any Pair use Checkbox beside IP.</p>
+            <div class="proxy-p1" style="display: flex;">
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-ip-p1"><input type="checkbox" id="proxy-status-p1" style="margin-right: 4px;" autocomplete="off">IP Address [Proxy #1]</label>
+                <input type="text" id="proxy-ip-p1"  autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: 70px; margin: 0 5px;">
+                <label for="proxy-port-p1">Port</label>
+                <input type="number" id="proxy-port-p1" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px); margin-right: 5px;">
+                <label for="proxy-username-p1">Username</label>
+                <input type="text" id="proxy-username-p1" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-password-p1">Password</label>
+                <input type="text" id="proxy-password-p1" autocomplete="off">
+              </div>
+            </div>
+            <div class="proxy-p2" style="display: flex;">
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-ip-p2"><input type="checkbox" id="proxy-status-p2" style="margin-right: 4px;">IP Address [Proxy #2]</label>
+                <input type="text" id="proxy-ip-p2" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: 70px; margin: 0 5px;">
+                <label for="proxy-port-p2">Port</label>
+                <input type="number" id="proxy-port-p2" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px); margin-right: 5px;">
+                <label for="proxy-username-p2">Username</label>
+                <input type="text" id="proxy-username-p2" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-password-p2">Password</label>
+                <input type="text" id="proxy-password-p2" autocomplete="off">
+              </div>
+            </div>
+            <div class="proxy-p3" style="display: flex;">
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-ip-p3"><input type="checkbox" id="proxy-status-p3" style="margin-right: 4px;">IP Address [Proxy #3]</label>
+                <input type="text" id="proxy-ip-p3" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: 70px; margin: 0 5px;">
+                <label for="proxy-port-p3">Port</label>
+                <input type="number" id="proxy-port-p3" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px); margin-right: 5px;">
+                <label for="proxy-username-p3">Username</label>
+                <input type="text" id="proxy-username-p3" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-password-p3">Password</label>
+                <input type="text" id="proxy-password-p3" autocomplete="off">
+              </div>
+            </div>
+            <div class="proxy-p4" style="display: flex;">
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-ip-p4"><input type="checkbox" id="proxy-status-p4" style="margin-right: 4px;">IP Address [Proxy #4]</label>
+                <input type="text" id="proxy-ip-p4" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: 70px; margin: 0 5px;">
+                <label for="proxy-port-p4">Port</label>
+                <input type="number" id="proxy-port-p4" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px); margin-right: 5px;">
+                <label for="proxy-username-p4">Username</label>
+                <input type="text" id="proxy-username-p4" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-password-p4">Password</label>
+                <input type="text" id="proxy-password-p4" autocomplete="off">
+              </div>
+            </div>
+            <div class="proxy-p5" style="display: flex;">
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-ip-p5"><input type="checkbox" id="proxy-status-p5" style="margin-right: 4px;">IP Address [Proxy #5]</label>
+                <input type="text" id="proxy-ip-p5" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: 70px; margin: 0 5px;">
+                <label for="proxy-port-p5">Port</label>
+                <input type="number" id="proxy-port-p5" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px); margin-right: 5px;">
+                <label for="proxy-username-p5">Username</label>
+                <input type="text" id="proxy-username-p5" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-password-p5">Password</label>
+                <input type="text" id="proxy-password-p5" autocomplete="off">
+              </div>
+            </div>
+            <div class="proxy-p6" style="display: flex;">
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-ip-p6"><input type="checkbox" id="proxy-status-p6" style="margin-right: 4px;">IP Address [Proxy #6]</label>
+                <input type="text" id="proxy-ip-p6" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: 70px; margin: 0 5px;">
+                <label for="proxy-port-p6">Port</label>
+                <input type="number" id="proxy-port-p6" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px); margin-right: 5px;">
+                <label for="proxy-username-p6">Username</label>
+                <input type="text" id="proxy-username-p6" autocomplete="off">
+              </div>
+              <div class="input-cnt text-input" style="width: calc(33.33% - 28px);">
+                <label for="proxy-password-p6">Password</label>
+                <input type="text" id="proxy-password-p6" autocomplete="off">
+              </div>
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 15px;">
+              <button type="submit" id="save-settings-btn" class="primary-btn">Save</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section data-page="payment-options" style="display: none;">
+        <p class="section-important-msg">Credit/Debit Card Bypass Comming Soon...</p>
+        <div class="action-bar">
+          <!-- <button type="button" id="config-sms-forwarder-btn" class="success-btn" style="width: 170px; border-radius: 50px">Config SMS Forwarder</button> -->
+          <button type="button" id="add-payment-option-btn" class="primary-btn" style="width: 170px; border-radius: 50px">+ Add Payment Option</button>
+        </div>
+        <table style="width: 1000px">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Payment Method</th>
+              <th>Details</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-payment-option-name="PAYTM QR">
+              <td>PAYTM QR</td>
+              <td>PAYTM QR</td>
+              <td>Scan QR & Pay (System default)</td>
+              <td>
+                <button type="button" data-payment-option-name="CHSGSVSVS" data-action="active" class="action-btn">Deactivate</button>
+                <button type="button" data-payment-option-name="CHSGSVSVS" data-action="edit" class="action-btn">Edit</button>
+                <button type="button" data-payment-option-name="CHSGSVSVS" data-action="delete" class="action-btn">Delete</button>
+              </td>
+            </tr>
+            <tr data-payment-option-name="PHONEPE QR">
+              <td>PHONEPE QR</td>
+              <td>PHONEPE QR</td>
+              <td>Scan QR & Pay (System default)</td>
+              <td>
+                <button type="button" data-payment-option-name="CHSGSVSVS" data-action="active" class="action-btn">Deactivate</button>
+                <button type="button" data-payment-option-name="CHSGSVSVS" data-action="edit" class="action-btn">Edit</button>
+                <button type="button" data-payment-option-name="CHSGSVSVS" data-action="delete" class="action-btn">Delete</button>
+              </td>
+            </tr>
+            <tr data-payment-option-name="PHONEPE QR">
+              <td>PAYTM QR</td>
+              <td>PHONEPE QR</td>
+              <td>Scan QR & Pay (System default)</td>
+              <td>
+                <button type="button" data-payment-option-name="CHSGSVSVS" data-action="active" class="action-btn">Deactivate</button>
+                <button type="button" data-payment-option-name="CHSGSVSVS" data-action="edit" class="action-btn">Edit</button>
+                <button type="button" data-payment-option-name="CHSGSVSVS" data-action="delete" class="action-btn">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section data-page="backup" style="display: none;">
+        <div class="download-backup">
+          <div class="extra-settings-options" style="display: flex; justify-content: flex-end; width: 100%;">
+            <button id="upload-backup-btn" class="success-btn" style="width: 140px; margin-left: 0;" type="button">Upload Backup</button>
+          </div>
+          <form class="download-backup-form">
+            <p class="info-msg" style="text-align: center; font-size: 17px;"><b>Download the backup file</b></p>
+            <div class="input-cnt text-input">
+              <label for="backup-file-name">Backup File Name</label>
+              <input type="input" id="backup-file-name" required/>
+            </div>
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="backup-irctc-ids" />
+              <label for="backup-irctc-ids">Exclude IRCTC ID'S.</label>
+            </div>
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="backup-payment-options" />
+              <label for="backup-payment-options">Exclude Payment Option's.</label>
+            </div>
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="backup-settings" />
+              <label for="backup-settings">Exclude All Settings.</label>
+            </div>
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="backup-tickets" />
+              <label for="backup-tickets">Exclude All Tickets.</label>
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 15px;">
+              <button type="submit" style="width: 120px;" id="download-backup-btn" class="primary-btn">DOWNLOAD</button>
+            </div>
+          </form>
+        </div>
+        <div class="upload-backup d-none">
+          <div style="display: flex; justify-content: flex-end; width: 100%;">
+            <button id="back-to-download-backup-btn" class="secondary-btn" type="button">Back</button>
+          </div>
+          <form class="upload-backup-form">
+            <p class="info-msg"><b>Upload your backup file</b></p>
+            <div class="input-cnt text-input">
+              <label for="backup-file" style="text-align: center;">Your Backup File</label>
+              <input type="file" id="backup-file" required/>
+            </div>
+            <div class="input-cnt checkbox">
+              <input type="checkbox" id="delete-old-data" />
+              <label for="delete-old-data">Delete old data and then upload this backup.</label>
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 15px;">
+              <button type="submit" id="download-backup-btn" class="primary-btn">UPLOAD</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section data-page="irctc-ids" style="display: none">
+        <p class="section-important-msg">Change All Id's Passwords Daily before Booking to Reduce Booking Not Allowed while Booking.</p>
+        <div class="action-bar" style="display: flex; flex-direction: column;">
+          <div style="display: flex; flex-direction: row; width: 100%; justify-content: end;">
+            <button type="button" class="success-btn" id="add-bulk-irctc-ids-btn" style="width: 120px; border-radius: 20px;">Add Bulk</button>
+            <input type="file" id="add-bulk-irctc-ids-file" class="d-none">
+            <button type="button" class="success-btn" id="change-all-password-btn" style="width: 170px; border-radius: 20px;">Change All Passwords</button>
+            <button type="button" class="danger-btn" id="delete-all-password-btn" style="width: 140px;margin-right: 10px;border-radius: 20px;">Delete All Ids</button>
+            <form class="add-irctc-id-form">
+              <input type="text" id="new-irctc-id" placeholder="IRCTC ID" autocomplete="off" required/>
+              <input type="text" id="new-irctc-password" placeholder="IRCTC PASSWORD" style="margin-left: 5px" autocomplete="off" required/>
+              <button type="submit" class="primary-btn" style="border-radius: 50px; margin-left: 5px">+ Add</button>
+            </form>
+          </div>
+          <div class="irctc-ids-counts" style="display: flex;">
+            <div class="irctc-ids-count">Total Ids : <span data-irctc-ids-count-type="all" class="irctc-ids-count-data">0</span></div>
+            <div class="irctc-ids-count">Total Active Ids : <span data-irctc-ids-count-type="active" class="irctc-ids-count-data">0</span></div>
+            <div class="irctc-ids-count">Total Inactive Ids : <span data-irctc-ids-count-type="inactive" class="irctc-ids-count-data">0</span></div>
+          </div>
+        </div>
+        <table style="width: 1000px; margin-bottom: 20px;">
+          <thead>
+            <tr>
+              <th>IRCTC ID</th>
+              <th>Password</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="3" style="text-align: center;">No IRCTC ID'S</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <div class="pigeon-notice-popup-cnt">
+        <div class="pigeon-notice-popup">
+          <div class="header">Notices</div>
+          <div class="body">
+            <div class="notice-content">
+              <pre>
+***Please Read Carefully***
+***Welcome to Pigeon Automation Software***
+Available Payment Options are IPAY UPI, PAYTM QR, PHONEPE QR and Debit/Credit Card Bypass</pre>
+            </div>
+            <div class="action-cnt">
+              <button id="close-pigeon-notice-btn" type="button" class="success-btn">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="login-pigeon-popup-cnt">
+        <div class="login-pigeon-popup">
+          <div class="pigeon-login-logo">
+            <img src="../images/logo/128x128.png" alt="">
+            <p>Pigeon Login</p>
+          </div>
+          <form class="pigeon-login-form">
+            <input id="pigeon-id" type="text" placeholder="Pigeon ID" autocomplete="off" required>
+            <input type="password" id="pigeon-password" placeholder="Password" autocomplete="off" required>
+            <div style="display: flex; justify-content: center;">
+                <button type="submit" class="success-btn" style="width: 100%;">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="../js/common.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/pigeon-panel.js"></script>
+  </body>
+</html>

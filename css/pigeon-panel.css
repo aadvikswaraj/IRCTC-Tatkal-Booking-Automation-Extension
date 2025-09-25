@@ -1,0 +1,1090 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+/* ------------------------ Pigeon Global Loader starts here ------------------------ */
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.pigeon-loader{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c9eaff;
+    z-index: 70;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pigeon-loader img{
+    animation: rotating 1s linear infinite;
+}
+.pigeon-loader p{
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 20px;
+}
+/* ------------------------ Pigeon Global Loader ends here ------------------------ */
+
+/* ------------------------ Header starts here ------------------------ */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid #ccc;
+    background-color: #01157adb;
+    color: white;
+}
+header .left{
+    display: flex;
+    align-items: center;
+}
+header .left .navlinks{
+    display: flex;
+    list-style: none;
+    margin-left: 37px;
+}
+.navlinks li .link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: wheat;
+    padding: 7px 10px;
+    margin: 0 3px;
+    border-radius: 20px;
+    transition: all 100ms ease;
+}
+.navlinks li .link.active{
+    background-color: wheat;
+    color: #01157adb;
+}
+.navlinks li .link.active .triangle_down{
+    border-top-color:#01157adb;
+}
+.navlinks li .link:hover .triangle_down{
+    border-top-color:#01157adb;
+}
+.navlinks li .link:hover{
+    background-color: wheat;
+    color: #01157adb;
+}
+header .right{
+    display: flex;
+    align-items: center;
+}
+.pigeon-id{
+    margin-right: 20px;
+}
+/* ------------------------ Header ends here ------------------------ */
+
+/* ------------------------ Basic Main, Table, Sections CSS starts here ------------------------ */
+main{
+    background-color: #c9eaff;
+    height: calc(100% - 60.8px);
+    min-height: calc(100vh - 60.8px);
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
+
+td, th {
+    border: 1px solid #aaa;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+section .action-bar{
+    width: 1000px;
+    padding: 20px 0 10px 0;
+    display: flex;
+    justify-content: end;
+}
+.section-important-msg{
+    padding: 8px 10px;
+    width: 100%;
+    text-align: center;
+    background: black;
+    color: yellow;
+    position: relative;
+    bottom: 1px;
+    font-size: 14px;
+}
+.action-btn{
+    background-color: wheat;
+    color: black;
+    border: 1px solid black;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.action-btn:hover{
+    background-color: black;
+    color: wheat;
+}
+/* ------------------------ Basic Main, Table, Sections CSS starts here ------------------------ */
+
+/* ------------------------ Add IRCTC ID Form starts here ------------------------ */
+.add-irctc-id-form input{
+    padding: 7px 12px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+}
+.add-irctc-id-form input:focus{
+    border: 1px solid #000;
+}
+.irctc-ids-counts{
+    display: flex;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.irctc-ids-count{
+    width: 33.33%;
+    text-align: center;
+}
+/* ------------------------ Add IRCTC ID Form ends here ------------------------ */
+
+/* ------------------------ IRCTC ID History starts here ------------------------ */
+/* Ticket Popup Basic */
+.irctc-id-history-popup-cnt{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+.ticket-popup{
+    width: 700px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 5px;
+}
+/* Ticket Popup Header */
+.ticket-popup-header{
+    display: flex;
+    justify-content: center;
+    background-color: #01157adb;
+    color: wheat;
+    padding: 10px 12px;
+    position: relative;
+}
+.ticket-popup-header .close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 37px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color: black;
+    cursor: pointer;
+}
+/* ------------------------ IRCTC ID History ends here ------------------------ */
+
+/* ------------------------ Ticket Popup Cnt starts here ------------------------ */
+/* Ticket Popup Basic */
+.ticket-popup-cnt{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+.ticket-popup{
+    width: 700px;
+    background-color: #fff;
+    overflow: visible;
+    border-radius: 5px;
+}
+/* Ticket Popup Header */
+.ticket-popup-header{
+    display: flex;
+    justify-content: center;
+    background-color: #01157adb;
+    color: wheat;
+    padding: 10px 12px;
+    position: relative;
+}
+.ticket-popup-header .close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 37px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color: black;
+    cursor: pointer;
+}
+/* Journey Data, contact and payment, preference data headers */
+.journey-data .header, .passengers-data .header, .contact-and-payment-data .header, .preferences-data .header{
+    font-size: 14px;
+    padding: 7px 10px;
+    background-color: burlywood;
+}
+/* Journey Data, contact and payment, preference data forms */
+.journey-data .form, .passengers-data .passengers, .contact-and-payment-data .form, .preferences-data .form{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 10px 0 10px;
+    background-color: #c9eaff;
+}
+/* Journey Data, contact and payment, preference data input cnt */
+.journey-data .form .input-cnt, .contact-and-payment-data .form .input-cnt{
+    width: 33.33%;
+    display: flex;
+    padding: 0 10px 10px 0;
+}
+/* Contact and Payment Data */
+.contact-and-payment-data .form .input-cnt{
+    width: 50%;
+}
+.contact-and-payment-data .form .input-cnt{
+    width: 50%;
+    padding: 0 0 10px 0;
+}
+/* Data Info Msg */
+.data-info-msg{
+    color: #e50000;
+    padding: 7px 10px;
+    font-size: 13px;
+    
+}
+
+/* Journey Data, contact and payment, preference data labels */
+.journey-data .form .input-cnt label, .contact-and-payment-data .form .input-cnt label, .preferences-data .form .input-cnt:last-child label{
+    font-size: 13px;
+    margin-right: 3px;
+    width: 59.6px !important;
+    display: flex;
+    align-self: center;
+    justify-content: end;
+}
+.contact-and-payment-data .form .input-cnt label{
+    width: 105.5px !important;
+}
+.preferences-data .form .input-cnt:last-child label{
+    width: auto !important;
+    margin-left: 0;
+}
+
+/* Journey Data, contact and payment, preference data inputs */
+.journey-data .form .input-cnt input, .journey-data .form .input-cnt select, .contact-and-payment-data .form .input-cnt input, .contact-and-payment-data .form .input-cnt select, .preferences-data .form .input-cnt:last-child input{
+    font-size: 13px;
+    width: calc(100% - 59.6px) !important;
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 7px;
+    border: 1px solid #aaa;
+}
+.contact-and-payment-data .form .input-cnt input, .contact-and-payment-data .form .input-cnt select{
+    width: calc(100% - 108.5px) !important;
+}
+.preferences-data .form .input-cnt:last-child input{
+    width: auto !important;
+}
+.journey-data .form .input-cnt input:focus, .journey-data .form .input-cnt select:focus, .contact-and-payment-data .form .input-cnt input:focus, .contact-and-payment-data .form .input-cnt select:focus, .preferences-data .form .input-cnt:last-child input:focus{
+    border: 1px solid #000;
+}
+
+/* Passengers Data */
+.passengers-data .passengers .labels{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.passengers-data .passengers .passenger-data{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.passengers-data .passengers .passenger-data .sno{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    padding: 2px 0;
+    border-radius: 22px;
+    font-weight: 600;
+}
+.passengers-data .passengers .passenger-data input, .passengers-data .passengers .passenger-data select{
+    font-size: 13px;
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 7px;
+    border: 1px solid #aaa;
+}
+.passengers-data .passengers .passenger-data input:focus, .passengers-data .passengers .passenger-data select:focus{
+    border: 1px solid #000;
+}
+.passengers-data .passengers .passenger-data input[data-input="name"]{
+    width: 150px;    
+}
+.passengers-data .passengers .passenger-data input[data-input="age"]{
+    width: 50px;
+}
+.passengers-data .passengers .passenger-data select[data-input="sex"]{
+    width: 90px;
+}
+.passengers-data .passengers .passenger-data select[data-input="berth"]{
+    width: 100px;
+}
+.passengers-data .passengers .passenger-data select[data-input="nationality"]{
+    width: 90px;
+}
+.passengers-data .passengers .passenger-data input[data-input="passport"]{
+    width: 145px;
+}
+.passengers-data .passengers .labels span{
+    border: 1px solid #777;
+    text-align: center;
+    padding: 2px 0;
+    border-radius: 20px;
+}
+.passengers-data .passengers .labels span[data-label="sno"]{
+    width: 20px;
+}
+.passengers-data .passengers .labels span[data-label="name"]{
+    width: 150px;
+}
+.passengers-data .passengers .labels span[data-label="age"]{
+    width: 50px;
+}
+.passengers-data .passengers .labels span[data-label="sex"]{
+    width: 90px;
+}
+.passengers-data .passengers .labels span[data-label="berth"]{
+    width: 100px;
+}
+.passengers-data .passengers .labels span[data-label="nationality"]{
+    width: 90px;
+}
+.passengers-data .passengers .labels span[data-label="passport"]{
+    width: 145px;
+}
+/* Preferences Data */
+.preferences-data .form .input-cnt{
+    width: 50%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.preferences-data .form .input-cnt label{
+    margin-left: 5px;
+    font-size: 13px;
+}
+.preferences-data .form .input-cnt:last-child label{
+    margin-right: 3px;
+}
+/* Ticket Popup Action Cnt */
+.ticket-popup .action-cnt{
+    background-color: #c9eaff;
+    padding: 5px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+}
+/* ------------------------ Ticket Popup Cnt ends here ------------------------ */
+
+/* ------------------------ Train Search Cnt starts here ------------------------ */
+/* Train search Popup Basic */
+.train-search-popup-cnt{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+.train-search-popup{
+    width: 1400px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+/* Train search Popup Header */
+.train-search-popup-header{
+    display: flex;
+    justify-content: center;
+    background-color: #01157adb;
+    color: wheat;
+    padding: 10px 12px;
+    position: relative;
+}
+.train-search-popup-header .close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 37px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color: black;
+    cursor: pointer;
+}
+/* Train search action cnt */
+.train-search-action-cnt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 7px 10px;
+    background-color: #ffe9cd;
+    border-bottom: 1px solid #000;
+}
+.train-search-action-cnt .input-cnt{
+    display: flex;
+    flex-direction: row;
+}
+.train-search-action-cnt .input-cnt input, .train-search-action-cnt .input-cnt select{
+    font-size: 13px;
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 7px;
+    border: 1px solid #aaa;
+}
+.train-search-action-cnt .input-cnt input:focus, .train-search-action-cnt .input-cnt select:focus{
+    border: 1px solid #000;
+}
+.train-search-action-cnt .input-cnt label{
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 5px;
+    font-size: 14px;
+}
+.train-search-data-cnt{
+    max-height: 300px;
+    overflow: auto;
+    padding: 10px;
+    font-size: 13px;
+}
+.train-search-data-cnt thead{
+    background-color: #c9eaff;
+    font-weight: 600;
+}
+.train-search-trigger-btn{
+    padding: 3px 5px;
+    height: 26px;
+    width: 140px;
+}
+/* ------------------------ Train Search Cnt ends here ------------------------ */
+
+/* ------------------------ Payment Options Popup Cnt starts here ------------------------ */
+/* Ticket Popup Basic */
+.payment-option-popup-cnt{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+.payment-option-popup{
+    width: 700px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 5px;
+}
+/* Ticket Popup Header */
+.payment-option-popup-header{
+    display: flex;
+    justify-content: center;
+    background-color: #01157adb;
+    color: wheat;
+    padding: 10px 12px;
+    position: relative;
+}
+.payment-option-popup-header .close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 37px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color: black;
+    cursor: pointer;
+}
+/* Journey Data */
+.payment-config-data .header, .payment-details-data .header{
+    font-size: 14px;
+    padding: 7px 10px;
+    background-color: burlywood;
+}
+.payment-config-data .form, .payment-details-data .form{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 10px 0 10px;
+    background-color: #c9eaff;
+}
+.payment-config-data .form .input-cnt, .payment-details-data .form .input-cnt{
+    width: 33.33%;
+    display: flex;
+    padding: 0 10px 10px 0;
+}
+/* Contact and Payment Data */
+.payment-config-data .form .input-cnt{
+    width: 50%;
+    padding: 0 5px 10px 0;
+}
+.payment-details-data .form .input-cnt{
+    width: 50%;
+}
+/* Data Info Msg */
+.payment-details-data-msg{
+    color: #e50000;
+    padding: 7px 10px;
+    font-size: 13px;
+    
+}
+
+/* Journey Data, contact and payment, preference data labels */
+.payment-config-data .form .input-cnt label, .payment-details-data .form .input-cnt label{
+    font-size: 13px;
+    margin-right: 3px;
+    width: 59.6px !important;
+    display: flex;
+    align-self: center;
+    justify-content: end;
+}
+
+/* Journey Data, contact and payment, preference data inputs */
+.payment-config-data .form .input-cnt input, .payment-config-data .form .input-cnt select, .payment-details-data .form .input-cnt input, .payment-details-data .form .input-cnt select{
+    font-size: 13px;
+    width: calc(100% - 59.6px) !important;
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 7px;
+    border: 1px solid #aaa;
+}
+.payment-config-data .form .input-cnt input:focus, .payment-config-data .form .input-cnt select:focus, .payment-details-data .form .input-cnt input:focus, .payment-details-data .form .input-cnt select:focus{
+    border: 1px solid #000;
+}
+
+/* Payment Option Action Cnt */
+.payment-option-popup .action-cnt{
+    background-color: #c9eaff;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+}
+/* ------------------------ Payment Options Cnt ends here ------------------------ */
+
+/* ------------------------ Main Settings starts here ------------------------ */
+.main-settings{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-settings-form{
+    background-color: #fff;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px #aaa;
+    width: 400px;
+}
+.main-settings-form .info-msg{
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #e50000;
+}
+.main-settings-form .input-cnt{
+    margin-bottom: 10px;
+}
+.main-settings-form .input-cnt.text-input{
+    display: flex;
+    flex-direction: column;
+}
+.main-settings-form .input-cnt.checkbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.main-settings-form .input-cnt.checkbox input{
+    margin-right: 5px;
+}
+.main-settings-form .input-cnt.text-input input{
+    outline: none;
+    border: 1px solid #aaa;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.main-settings-form .input-cnt.text-input input:focus{
+    border: 1px solid #000;
+}
+.main-settings-form .input-cnt.checkbox label{
+    font-size: 14px;
+}
+.main-settings-form .input-cnt.text-input label{
+    font-size: 14px;
+    padding-bottom: 4px;
+}
+/* ------------------------ Main Settings ends here ------------------------ */
+
+/* ------------------------ Pair Settings starts here ------------------------ */
+.pair-settings{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pair-settings-form{
+    background-color: #fff;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px #aaa;
+    width: 650px;
+}
+.input-group-cnt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.pair-settings-form .info-msg{
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #e50000;
+}
+.pair-settings-form .input-cnt{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: calc(50% - 5px);
+}
+.pair-settings-form .input-cnt input{
+    outline: none;
+    border: 1px solid #aaa;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.pair-settings-form .input-cnt input:focus{
+    border: 1px solid #000;
+}
+.pair-settings-form .input-cnt label{
+    font-size: 14px;
+    padding-bottom: 4px;
+}
+/* ------------------------ Pair Settings ends here ------------------------ */
+
+/* ------------------------ Proxy Settings starts here ------------------------ */
+.proxy-settings{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.proxy-settings-form{
+    background-color: #fff;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px #aaa;
+    width: 600px;
+}
+.proxy-settings-form .info-msg{
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #e50000;
+}
+.proxy-settings-form .input-cnt{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.proxy-settings-form .input-cnt input{
+    outline: none;
+    border: 1px solid #aaa;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.proxy-settings-form .input-cnt input:focus{
+    border: 1px solid #000;
+}
+.proxy-settings-form .input-cnt label{
+    font-size: 14px;
+    padding-bottom: 4px;
+}
+/* ------------------------ Proxy Settings ends here ------------------------ */
+
+/* ------------------------ Pigeon Login Cnt starts here ------------------------ */
+.login-pigeon-popup-cnt{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: #c9eaff;
+}
+.login-pigeon-popup{
+    padding: 20px;
+    background-color: #c9eaff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pigeon-login-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.pigeon-login-logo p{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.pigeon-login-logo img{
+    width: 60px;
+}
+.pigeon-login-form{
+    display: flex;
+    flex-direction: column;
+}
+.pigeon-login-form input{
+    font-size: 14px;
+    height: 30px;
+    padding: 0 8px;
+    outline: none;
+    border: 1px solid #aaa;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.pigeon-login-form input:focus{
+    border: 1px solid #000;
+}
+.pigeon-login-form button{
+    margin: 0;
+}
+/* ------------------------ Pigeon Login Cnt ends here ------------------------ */
+
+/* ------------------------ Pigeon Notice Cnt starts here ------------------------ */
+.pigeon-notice-popup-cnt{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+.pigeon-notice-popup{
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.pigeon-notice-popup .header{
+    text-align: center;
+    height: 40px;
+    background-color: #01157adb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+.pigeon-notice-popup .body{
+    display: flex;
+    flex-direction: column;
+}
+.pigeon-notice-popup .body .notice-content{
+    background-color: wheat;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    padding: 5px 12px;
+    font-weight: 600;
+}
+.pigeon-notice-popup .body .action-cnt{
+    background-color: #c9eaff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+/* ------------------------ Pigeon Notice Cnt ends here ------------------------ */
+
+/* ------------------------ Pigeon Download Backup starts here ------------------------ */
+.download-backup{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.download-backup-form{
+    background-color: #fff;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px #aaa;
+    width: 400px;
+}
+.download-backup-form .info-msg{
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #e50000;
+}
+.download-backup-form .input-cnt{
+    margin-bottom: 10px;
+}
+.download-backup-form .input-cnt.text-input{
+    display: flex;
+    flex-direction: column;
+}
+.download-backup-form .input-cnt.checkbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.download-backup-form .input-cnt.checkbox input{
+    margin-right: 5px;
+}
+.download-backup-form .input-cnt.text-input input{
+    outline: none;
+    border: 1px solid #aaa;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.download-backup-form .input-cnt.text-input input:focus{
+    border: 1px solid #000;
+}
+.download-backup-form .input-cnt.checkbox label{
+    font-size: 14px;
+}
+.download-backup-form .input-cnt.text-input label{
+    font-size: 14px;
+    padding-bottom: 4px;
+}
+/* ------------------------ Pigeon Download Backup ends here ------------------------ */
+
+/* ------------------------ Pigeon Upload Backup starts here ------------------------ */
+.upload-backup{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.upload-backup-form{
+    background-color: #fff;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px #aaa;
+    width: 400px;
+}
+.upload-backup-form .info-msg{
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #e50000;
+}
+.upload-backup-form .input-cnt{
+    margin-bottom: 10px;
+}
+.upload-backup-form .input-cnt.text-input{
+    display: flex;
+    flex-direction: column;
+}
+.upload-backup-form .input-cnt.checkbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.upload-backup-form .input-cnt.checkbox input{
+    margin-right: 5px;
+}
+.upload-backup-form .input-cnt.text-input input{
+    outline: none;
+    border: 1px solid #aaa;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.upload-backup-form .input-cnt.text-input input:focus{
+    border: 1px solid #000;
+}
+.upload-backup-form .input-cnt.checkbox label{
+    font-size: 14px;
+}
+.upload-backup-form .input-cnt.text-input label{
+    font-size: 14px;
+    padding-bottom: 4px;
+}
+/* ------------------------ Pigeon Upload Backup ends here ------------------------ */
+.triangle_down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid wheat;
+    font-size: 0;
+    line-height: 0;
+    float: right;
+    margin-left: 7px;
+    position: relative;
+    bottom: 0.5px;
+}
+.dropdown-menu-outer:hover .dropdown-menu{
+    display: flex;
+
+}
+.dropdown-menu{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: calc(100% - 2px);
+    z-index: 2;
+    background-color: white;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 1px #000;
+    width: 200px;
+    overflow: hidden;
+}
+.dropdown-menu li .dropdown-link{
+    padding: 7px 15px;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+}
+.dropdown-menu li .dropdown-link:hover{
+    background-color: wheat;
+    color: #01157adb;
+}
+
+
+/*the container must be positioned relative:*/
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+  
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+}
+
+.train-search-availibility-cnt{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    align-items: center;
+}
+.train-search-availibility-cnt svg{
+    height: 30px;
+    width: 45px;
+}
+.train-search-availibility-cnt svg circle{
+    fill: DodgerBlue;
+    stroke: DodgerBlue;
+}
+#train-search-availibility-btn{
+    width: auto;
+    margin-left: 10px;
+    padding: 7px 30px;
+}
+.train-search-fare-cnt{
+    margin-left: 10px;
+    font-size: 14px;
+}
